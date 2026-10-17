@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="MySuite">
+    <test name="LoginTestsMoudul">
+        <classes>
+            <class name="LoginTest.LoginTest"/>
+            <class name="tasks.task2"/>
+            <class name="tasks.task3"/>
+            <class name="tasks.task4"/>
+            <class name="tasks.task5"/>
+        </classes>
+    </test>
+</suite>
+
+<!--        Run via Maven-->
+<!--        mvn clean test-->
