@@ -15,26 +15,31 @@ public class Dependents extends BasePage {
     private final By relationOpthion = By.xpath("//div[@role=\"listbox\"]//div[@role=\"option\"][2]");
     private final By dataOfBirthField = By.xpath("//div[@class=\"oxd-form-row\"][2]//div[@class=\"oxd-grid-item oxd-grid-item--gutters\"][1]//input[@class=\"oxd-input oxd-input--active\"]");
     private final By saveButton = By.xpath("//button[@type=\"submit\"]");
-    private final By succesflyMessage=By.xpath("//p[@class=\"oxd-text oxd-text--p oxd-text--toast-title oxd-toast-content-text\"]");
+    private final By succesflyMessage = By.xpath("//p[@class=\"oxd-text oxd-text--p oxd-text--toast-title oxd-toast-content-text\"]");
 
 
-    public void clickOnAddDependentsButton(){
+    public void clickOnAddDependentsButton() {
         click(addDependentsButton);
     }
-    public void enterNameField(String name){
-        sendText(nameField,name);
+
+    public void enterNameField(String name) {
+        sendText(nameField, name);
     }
-    public void selectRelationList(){
+
+    public void selectRelationList() {
         click(relationList);
         click(relationOpthion);
     }
-    public void enterDataOfBirthField(String DOB){
-        sendText( dataOfBirthField,DOB);
+
+    public void enterDataOfBirthField(String DOB) {
+        sendText(dataOfBirthField, DOB);
     }
-    public void clickOnSave(){
+
+    public void clickOnSave() {
         click(saveButton);
     }
-    public String getSucceflyMessage(){
+
+    public String getSucceflyMessage() {
         return getText(succesflyMessage);
     }
 

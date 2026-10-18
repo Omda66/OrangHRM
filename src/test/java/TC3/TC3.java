@@ -48,5 +48,6 @@ public class TC3 extends BaseTest {
         dependents.enterDataOfBirthField("2001-12-11");
         dependents.clickOnSave();
         Assert.assertEquals(dependents.getSucceflyMessage(),"Success");
+        softAssert.assertAll();
     }
 }
