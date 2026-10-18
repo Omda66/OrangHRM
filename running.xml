@@ -2,14 +2,13 @@
 <suite name="MySuite">
     <test name="LoginTestsMoudul">
         <classes>
-            <class name="LoginTest.LoginTest"/>
-            <class name="tasks.task2"/>
-            <class name="tasks.task3"/>
-            <class name="tasks.task4"/>
-            <class name="tasks.task5"/>
+            <class name="TC1.TC1"/>
+            <class name="TC2.TC2"/>
+            <class name="TC3.TC3"/>
+            <class name="TC4.TC4"/>
+            <class name="TC5.TC5"/>
         </classes>
     </test>
 </suite>
 
-<!--        Run via Maven-->
-<!--        mvn clean test-->
+
