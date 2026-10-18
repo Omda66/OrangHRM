@@ -25,14 +25,20 @@ public class LoginPage extends BasePage {
 
 
     public void enterUsernameField(String username) {
-        sendText(usernameField, username,Duration.ofSeconds(5000));
+        sendText(usernameField, username);
     }
     public void enterPasswordField(String password) {
-        sendText(passwordField, password, Duration.ofSeconds(5000));
+        sendText(passwordField, password);
     }
     public void clickLogin() {
         click(loginButton,Duration.ofSeconds(5000));
     }
 
+
+    public void login (String userName,String password){
+        enterUsernameField(userName);
+        enterPasswordField(password);
+        clickLogin();
+    }
 
 }
