@@ -15,8 +15,6 @@ public class E_ContactDetails extends BasePage {
     private final By state_ProvinceFiled = By.xpath("//div[@class=\"oxd-form-row\"][1]//div[@class=\"oxd-grid-item oxd-grid-item--gutters\"][4]//input[@class=\"oxd-input oxd-input--active\"]");
     private final By zip_PostalCodeField = By.xpath("//div[@class=\"oxd-form-row\"][1]//div[@class=\"oxd-grid-item oxd-grid-item--gutters\"][5]//input[@class=\"oxd-input oxd-input--active\"]");
     private final By succesflyMessage=By.xpath("//p[@class=\"oxd-text oxd-text--p oxd-text--toast-title oxd-toast-content-text\"]");
-
-
     private final By homeField = By.xpath("//div[@class=\"oxd-form-row\"][2]//div[@class=\"oxd-grid-item oxd-grid-item--gutters\"][1]//input[@class=\"oxd-input oxd-input--active\"]");
     private final By mobileField = By.xpath("//div[@class=\"oxd-form-row\"][2]//div[@class=\"oxd-grid-item oxd-grid-item--gutters\"][2]//input[@class=\"oxd-input oxd-input--active\"]");
     private final By workField = By.xpath("//div[@class=\"oxd-form-row\"][2]//div[@class=\"oxd-grid-item oxd-grid-item--gutters\"][3]//input[@class=\"oxd-input oxd-input--active\"]");

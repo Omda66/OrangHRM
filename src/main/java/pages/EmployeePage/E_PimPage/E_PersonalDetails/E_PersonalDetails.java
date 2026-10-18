@@ -14,7 +14,7 @@ public class E_PersonalDetails extends BasePage {
     private final By maritalStatusOpthion=By.xpath("//div[@role=\"listbox\"]//div[@role=\"option\"][2]");
     private final By nationalityOpthion=By.xpath("//div[@role=\"listbox\"]//div[@role=\"option\"][2]");
     private final By succesflyMessage=By.xpath("//p[@class=\"oxd-text oxd-text--p oxd-text--toast-title oxd-toast-content-text\"]");
-  private final By clickOnContactDetails=By.xpath("//div[@role=\"tab\"][2]//a[@class=\"orangehrm-tabs-item\"]");
+    private final By clickOnContactDetails=By.xpath("//div[@role=\"tab\"][2]//a[@class=\"orangehrm-tabs-item\"]");
 
     private final By userDropDown = By.xpath("//i[@class=\"oxd-icon bi-caret-down-fill oxd-userdropdown-icon\"]");
     private final By logOut = By.xpath("//li[4]//a[@role=\"menuitem\"]");
