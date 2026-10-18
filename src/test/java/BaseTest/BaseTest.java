@@ -9,8 +9,9 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import uttils.ConfigHandler;
+import uttils.ExcelFile;
+import uttils.JSONFileManger;
 import uttils.ScreenShot;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -19,6 +20,9 @@ public class BaseTest {
     private static final Logger log = LogManager.getLogger(BaseTest.class);
     public ConfigHandler configHandler;
     public WebDriver driver;
+    public JSONFileManger jsonFileManger;
+    public JSONFileManger newEmployee;
+    public ExcelFile excelFile;
     @BeforeMethod
     public void setuptall() {
         log.info("==================== Test setup started ====================");
@@ -26,7 +30,12 @@ public class BaseTest {
             log.trace("Loading config file: src/main/resources/cong.properties");
             configHandler = new ConfigHandler("src/main/resources/cong.properties");
             log.debug("Config file loaded");
-            log.debug("CSV file loaded");
+            log.trace("Loading JSON files: product.json and user.json");
+            jsonFileManger = new JSONFileManger("src/main/resources/EmployeeInfo.json");
+            newEmployee = new JSONFileManger("src/main/resources/newEmployee.json");
+            log.debug("JSON files loaded");
+            excelFile=new ExcelFile("src/main/resources/EmployeeEmergency.xlsx",0);
+
         } catch (RuntimeException e) {
             log.error(" Failed to load config / data files", e);
             throw e;
@@ -73,7 +82,6 @@ public class BaseTest {
             File image= ScreenShot.takeScreenShot(driver);
             FileInputStream fis=new FileInputStream(image);
             Allure.addAttachment("Screenshot","image/png",fis,"png");
-           // Allure.addAttachment("Failure screenshot for TC"+result.getTestName(),"image/png", FileUtils.openInputStream(image),"png");
         }
     }
 //    @AfterMethod
@@ -82,3 +90,4 @@ public class BaseTest {
 //        driver = null;
 //    }
 }
+
