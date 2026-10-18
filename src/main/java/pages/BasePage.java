@@ -2,14 +2,13 @@ package pages;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.io.File;
 
+import java.net.URL;
 import java.time.Duration;
 
 public class BasePage {
@@ -83,6 +82,18 @@ public class BasePage {
         if (elapsed > duration.toMillis() / 2) {
             log.warn("Element {} was slow to appear: {} ms (timeout is {} ms)",
                     locator, elapsed, duration.toMillis());
+        }
+    }
+    public static String getResourcePath(String fileName) {
+        try {
+            URL url = BasePage.class.getClassLoader().getResource(fileName);
+            if (url == null) {
+                throw new RuntimeException("File not found in resources: " + fileName);
+            }
+            return new
+                    File(url.toURI()).getAbsolutePath();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 

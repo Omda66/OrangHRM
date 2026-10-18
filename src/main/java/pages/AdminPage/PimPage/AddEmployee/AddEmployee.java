@@ -20,10 +20,11 @@ public class AddEmployee extends BasePage {
     private final By passwordField = By.xpath("//div[@class=\"oxd-grid-item oxd-grid-item--gutters user-password-cell\"]//input[@type=\"password\"]");
     private final By confirmPasswordField = By.xpath("//div[@class=\"oxd-grid-item oxd-grid-item--gutters\"]//input[@type=\"password\"]");
     private final By saveButton = By.xpath("//button[@type=\"submit\"]");
-    private final By enabledRadioButton = By.xpath("//div[@class=\"oxd-radio-wrapper\"]//input[@value=\"1\"]");/*********************************************************************************/
     private final By userDropDown = By.xpath("//i[@class=\"oxd-icon bi-caret-down-fill oxd-userdropdown-icon\"]");
     private final By logOut = By.xpath("//li[4]//a[@role=\"menuitem\"]");
     private final By succesflyMessage=By.xpath("//p[@class=\"oxd-text oxd-text--p oxd-text--toast-title oxd-toast-content-text\"]");
+    private static final By addPhotoButton = By.xpath("//button[contains(@class,'employee-image-action')]");
+    private final By profileImageInput = By.xpath("//input[@type='file']");
     private final By x = By.xpath("");
 
 
@@ -44,7 +45,7 @@ public class AddEmployee extends BasePage {
     }
 
     public void clickOnCreatDetials() {
-        click(creatDetailsSwitch, Duration.ofSeconds(3000));
+        click(creatDetailsSwitch);
     }
     public void enterUsernameField(String username){
         sendText(userNameField,username);
@@ -66,5 +67,22 @@ public class AddEmployee extends BasePage {
     }
     public String getSucceflyMessage(){
         return getText(succesflyMessage);
+    }
+
+
+    public void enterFullName(String fname,String lname){
+        enterFirstNameField(fname);
+        enterlastNameField(lname);
+    }
+    public void createLoginDetails(String username,String passowrd){
+        enterUsernameField(username);
+        enterPasswordField(passowrd);
+        enterConfirmPasswordField(passowrd);
+    }
+
+    public AddEmployee uploadProfilePicture(String resourceFileName) {
+        String path = getResourcePath(resourceFileName);
+        driver.findElement(profileImageInput).sendKeys(path);
+        return this;
     }
 }

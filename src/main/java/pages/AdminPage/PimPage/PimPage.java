@@ -15,8 +15,10 @@ public class PimPage extends BasePage {
     private final By addEmployeeButton = By.xpath("//ul//li[contains(@class,\"oxd-topbar-body-nav-tab\")][3]");
     private final By editOneEmployee = By.xpath("//div[@class=\"oxd-table-card\"][1]");
     private final By reportsButton = By.xpath("//li[@class=\"oxd-topbar-body-nav-tab\"][2]");
-    private final By x = By.xpath("");
-
+    private final By employeeNameField = By.xpath("//div[@class=\"oxd-grid-item oxd-grid-item--gutters\"][1]//input[@placeholder=\"Type for hints...\"]");
+    private final By searchButton=By.xpath("//button[@type=\"submit\"]");
+    private final By nameEmployee = By.xpath("//div[@role=\"listbox\"]//div[@role=\"option\"][normalize-space()='Ahmed Emad']");
+    private final By employee=By.xpath("//div[@class=\"oxd-table-row oxd-table-row--with-border oxd-table-row--clickable\"]");
     public String getPimTitle() {
         return getText(pimTitle, Duration.ofSeconds(5000));
     }
@@ -24,11 +26,22 @@ public class PimPage extends BasePage {
     public void clickOnAddEmployee() {
         click(addEmployeeButton);
     }
-    public void clickOnEditOneEmployee(){
+
+    public void clickOnEditOneEmployee() {
         click(editOneEmployee);
     }
-    public void clickOnReportsButton(){
+
+    public void clickOnReportsButton() {
         click(reportsButton);
     }
-
+    public void enterEmployeeName(String employeeName){
+        sendText(employeeNameField,employeeName);
+        click(nameEmployee);
+    }
+    public void clickOnSearchButton(){
+        click(searchButton);
+    }
+    public void clickOnEmployee(){
+        click(employee);
+    }
 }
