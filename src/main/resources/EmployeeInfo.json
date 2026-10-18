@@ -1,0 +1,13 @@
+{
+      "street_1": "plasten",
+      "street_2": "310",
+      "city": "cairo",
+      "state_province": "single",
+      "zip_postal_code": "1010",
+      "home": "02222",
+      "mobile": "01000",
+      "work": "01242",
+      "work_email": "work.admin@example.com",
+      "other_email": "other.admin@example.com"
+    }
+
